@@ -26,8 +26,8 @@ NOTE: If you want to change rate limits or update the system prompts. Those are 
 Resume data lives in `data/<RESUME_ID>.json`. Each bullet includes an `id` and optional `story` field used for inline expansion. Suggested questions live in a `suggestedQuestions` array on the resume JSON. Just have a look at the resume.json example.
 
 ## OK let's kick the tires!
-1. Install dependencies:
-   Docker, ollama, nodes, uh, I think that's it.
+1. **Install dependencies**:
+   - Docker, ollama, npm 
 2. **Create your resume JSON** under `data/`:
    - Copy `data/resume.json` to `data/<your-id>.json`.
    - Update `name`, `title`, `summary`, and `contact`.
