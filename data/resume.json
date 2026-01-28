@@ -1,0 +1,337 @@
+{
+  "name": "John Doe",
+  "title": "DevOps & Site Reliability Engineering Leader",
+  "contact": {
+    "email": "donotreply@gmail.com",
+    "phone": "123-456-7890"
+  },
+  "summary": "I lead organizations in scaling DevOps and Site Reliability Engineering practices by embedding reliability, automation, and sound systems architecture into engineering culture improving delivery velocity, service quality, and sustainable work-life balance.",
+  "suggestedQuestions": [
+    "What is John's experience with DevOps leadership?",
+    "Which tools has John used for CI/CD and release automation?",
+    "What measurable outcomes has John delivered?",
+    "What AI or ML work has John done recently?",
+    "What projects has John worked on?"
+  ],
+  "experience": [
+    {
+      "company": "Random Company llc",
+      "role": "Technical Consultant",
+      "start": "2024-05",
+      "end": "Present",
+      "bullets": [
+        {
+          "id": "lb-vision-ai-rag",
+          "text": "Developed AI-enabled applications (Swift, Python) leveraging Apple Vision, on-device RAG, and automation for route planning, geospatial tracking, and natural-language querying of technical manuals.",
+          "story": "I built several AI-enabled apps in Swift. One lets you pick photos from your library and generates a GPS route by ordering them chronologically and mapping the geotag trail. Another handles fuel tracking and route planning. We needed a custom mapping overlay on top of Apple Maps because it does not natively support RV-height routing, so I built the overlay and routing logic, with bridge and tunnel data, after a trip where I realized most bridges on the East Coast were too low for my RV."
+        },
+        {
+          "id": "lb-dashcam-route-mapper",
+          "text": "Lead maintainer of open-source Dashcam-Route-Mapper application, managing contributions and feature development for geospatial data processing and route visualization.",
+          "story": "I built a tool to visualize GPS telemetry from Dashcam time-lapse videos. I used Apple Vision to extract the embedded GPS data, then fed it into Dashcam-Route-Mapper for route visualization. I also used Apple Vision to OCR technical manuals and pipe the extracted text into Dashcam-Route-Mapper for searchable, mapped references."
+        },
+        {
+          "id": "lb-brand-growth",
+          "text": "Developed a brand with 26,000+ monthly viewers and 6,500+ subscribers.",
+          "story": "I launched a YouTube channel and scripted, filmed, edited, and published 180+ videos documenting the full transformation of a surplus military vehicle into an overland RV. The channel grew to 26,000+ monthly viewers and more than 60,000 hours of watch time."
+        }
+      ]
+    },
+    {
+      "company": "HealthCompanyX",
+      "role": "Engineering Manager",
+      "start": "2021-04",
+      "end": "2024-05",
+      "bullets": [
+        {
+          "id": "HealthCompanyX-devsecops-lead",
+          "text": "Led an enterprise DevSecOps team of 6 FTEs plus 0-15 offshore engineers and contractors (scaled to project demand) responsible for CI/CD pipeline tooling, build frameworks, release automation, and infrastructure delivery across 800+ in-house and COTS applications.",
+          "story": "I managed the Enterprise Delivery Services team at HealthCompanyX. Our core U.S.-based team of six delivered DevSecOps tooling, CI/CD standards, and platform guidance to the broader engineering org. We scaled the team with offshore engineers and contractors based on project demand."
+        },
+        {
+          "id": "HealthCompanyX-copilot-governance",
+          "text": "Launched GitHub Copilot enterprise-wide and established AI governance frameworks by partnering with Legal, Security, and Engineering; enabling secure AI adoption while ensuring compliance.",
+          "story": "This is one I'm particularly proud of. GitHub Copilot was the first AI tool launched at HealthCompanyX, so there were no existing policies to guide its use. I led a cross-functional effort with Legal, Security, and Engineering to establish AI governance, define legal and security controls, and pilot Copilot with a small developer group. After validation, we rolled it out enterprise-wide and tracked adoption through access requests and per-developer usage metrics."
+        },
+        {
+          "id": "HealthCompanyX-metrics-savings",
+          "text": "Built a data gathering and metrics tracking solution (PowerShell, Azure Monitor, TSQL, Power BI) to drive data-informed decisions, resulting in $2M hardware cost savings and $1M annual licensing reduction.",
+          "story": "I built data-gathering pipelines and metrics dashboards for several applications at HealthCompanyX. The data revealed true cost versus business value, which let us reduce IBM UrbanCode Deploy licensing, shift most Visual Studio Enterprise seats to Professional, and retire two security products, saving over $1M annually. We also consolidated dedicated hardware, avoiding about $2M in refresh costs."
+        },
+        {
+          "id": "HealthCompanyX-sdlc-wiki",
+          "text": "Authored a System Development Life-Cycle (SDLC) framework, refining all company policies, procedures, and requirements into an interactive Wiki that provides our development community, management, and auditors a guide in how to design, deliver, operate, and retire a service inside of HealthCompanyX’s regulated healthcare space. Streamlining development and reducing audit times from months to days.",
+          "story": "An audit showed we needed a system development life cycle above the software development lifecycle. I created a System Development Life Cycle for HealthCompanyX's regulated healthcare environment. We pulled together legislative frameworks (HIPAA, HITRUST, SOC 2), internal policies, procedures, and requirements that were scattered across repos and orgs, mapped the artifacts in a value-stream style flow, and documented what was required for audit readiness by data type. We then built a wiki that guides teams through how to design, develop, deliver, operate, and retire services in a regulated environment."
+        }
+      ]
+    },
+    {
+      "company": "HealthCompanyX",
+      "role": "Senior Engineer",
+      "start": "2008-03",
+      "end": "2021-04",
+      "bullets": [
+        {
+          "id": "HealthCompanyX-autobuild",
+          "text": "Designed an in-house Configuration As Code abstraction layer named AutoBuild (PowerShell, C#) that obfuscates delivery toolchain complexity, reducing developer onboarding training time by 3 months.",
+          "story": "You can think of AutoBuild as Terraform for full-stack application orchestration. It lets developers define an application with a set of INI files, and automation uses those files plus repo structure to build, test, and release through dev, test, acceptance, and production. That let developers focus on application code instead of delivery tooling complexity. During a federal audit, I was told they had never seen a process this clear, and it reduced audit timelines from months to days."
+        },
+        {
+          "id": "HealthCompanyX-unified-delivery-platform",
+          "text": "Led 5-person team that built a unified delivery platform consolidating 15 separate teams maintaining 35+ deployment tools, enabling reallocation of 22 staff members (from 27 to 5) through automation and self-service tooling. Final delivery tool set included Azure DevOps, IBM DevOps Deploy, JFrog Artifactory, JFrog XRay, SonarQube, and AutoBuild.",
+          "story": "This was one of the highest-impact projects I've worked on. Before the project, we had 15 delivery teams, each coordinating with the Application and Environment Services (AES) team. Every team hosted its own delivery toolchain, and AES coordinated releases to each environment. The process was full of bottlenecks and often forced developers to request admin access to fix deployments, which led to manual changes that never made it into production. We assembled a cross-team group to stabilize the environments and built a unified delivery platform that consolidated tooling, process, and administration into a centrally managed automated pipeline. We trained developers and delegated platform access directly to teams. By limiting admin access and enabling self-service pipelines, we stabilized environments, increased deployment frequency from once per week to dozens per day, and freed 22 staff members to focus on development instead of release support."
+        },
+        {
+          "id": "HealthCompanyX-hybrid-delivery",
+          "text": "Enabled developers to self-service full-stack delivery to on-premises (VMware, physical hardware), cloud native (Azure), hybrid, and managed container services (AKS, Kubernetes).",
+          "story": "The Enterprise Delivery Services team stood up HealthCompanyX's initial cloud presence. We built an automated delivery pipeline that deployed infrastructure and applications across on-prem, cloud, and hybrid environments. This capability was later migrated to a dedicated cloud team."
+        },
+        {
+          "id": "HealthCompanyX-aks-k8s",
+          "text": "Managed Kubernetes deployments across AKS clusters, including container orchestration, namespace design, Helm chart development, and deployment automation integrated into CI/CD pipelines.",
+          "story": "I partnered with the Data Hub team to automate Kubernetes deployments across AKS. We created Helm chart standards and CI/CD pipelines to deploy and manage workloads consistently across clusters. This work was later transitioned to a dedicated cloud team."
+        },
+        {
+          "id": "HealthCompanyX-upgrade-automation",
+          "text": "Automated the core facets upgrade frameworks, reducing application deployment times by 40%.",
+          "story": "The core claims processing platform, Facets, is a monolithic system with layered sub-applications. Each layer had to be upgraded in a strict sequence to prevent data corruption. Upgrades ran twice a year and required 5 to 10 people working three to four days around the clock. After one upgrade where I started at 7am Thursday and left Monday at 2pm, I spent the next five months automating every possible step with validation and load testing. The next upgrade finished in about 2.5 days for the core system, and the remaining application upgrades completed in 12 hours. TriZetto later asked for my scripts to use with other Blue plans."
+        },
+        {
+          "id": "HealthCompanyX-citrix-reliability",
+          "text": "Designed and implemented a Citrix environment improving uptime of the front end claims processing interface from 77.5% to 99.97% reliability.",
+          "story": "I joined the Citrix team and my first project was to design a reboot process for the Citrix servers. When I asked why we rebooted them daily, I was told they would crash otherwise. After scripting reboots, I partnered with Marty Cookson to profile the environment and identify the culprit: printer drivers loaded on the Citrix servers. We replaced them with a generic Citrix driver and routed print jobs through a centralized print server, which eliminated the daily crashes."
+        }
+      ]
+    },
+    {
+      "company": "DeathStarTelco",
+      "role": "Systems Engineer",
+      "start": "2001-01",
+      "end": "2008-03",
+      "bullets": [
+        {
+          "id": "DeathStarTelco-windows-migration",
+          "text": "Maintained Unix, Windows, and Citrix infrastructure for the national network operations center.",
+          "story": "I was hired to recover a stalled migration of the Network Operations Center from Solaris to Windows. By the time I arrived, the UNIX admins had devolved to sneaker-netting updates from one PC to another. I discovered the migration was driven solely by a Windows-only monitoring tool; the rest of the NOC stack and thousands of switches were UNIX. I paused the project, worked with the TCAM vendor in Israel to host the monitoring app on Citrix, migrated the NOC back to Solaris workstations, and then maintained the Windows/Citrix footprint required for the tool along with the Solaris desktops."
+        },
+        {
+          "id": "DeathStarTelco-backup-noc",
+          "text": "I built the backup network operations center in Redmond Washington.",
+          "story": "After stabilizing the National Network Operations Center in Bothell, I joined the team to build a backup NOC. This coincided with DeathStarTelco acquiring Some other Wireless company, whose Redmond NOC had been stripped during a fire-sale liquidation. Our team rebuilt the facility end to end: workstations, desks, CAT-5 runs, and we installed an intermediate distribution frame with Cisco 5505 switches, built a video display wall for live alert streaming, created a custom Crestron controller for 16 projectors with multiple video inputs, rebuilt the UPS battery bank, and coordinated the generator installation."
+        }
+      ]
+    },
+    {
+      "company": "ContractCompanyX",
+      "role": "Contractor / Desktop Administrator",
+      "start": "1999-01",
+      "end": "2001-01",
+      "bullets": [
+        {
+          "id": "government-systems-administrator",
+          "text": "Maintained desktop infrastructure for the government lab.",
+          "story": "I maintained desktop infrastructure for Government Lab and held a Department of fubar security clearance."
+        }
+      ]
+    },
+    {
+      "company": "MyCompanyX",
+      "role": "Partner / Field Service Technician",
+      "start": "1997-12",
+      "end": "2001-01",
+      "bullets": [
+        {
+          "id": "mgg-field-service-technician",
+          "text": "Maintained Windows desktop, server, and novell netware infrastructure for 60 small business across the state of New Mexico.",
+          "story": "While chatting on a BBS with friends about how hard it was to find IT help for a small mortgage company, we decided to start our own business. After months of door-to-door sales and word-of-mouth referrals, five of us had signed 60 small-business clients across New Mexico. The business grew quickly, and we eventually accepted a buyout."
+        }
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "category": "Machine Learning and Artificial Intelligence",
+      "items": [
+        {
+          "year": 2025,
+          "name": "Deep Learning"
+        },
+        {
+          "year": 2025,
+          "name": "Neural Networks and Deep Learning"
+        },
+        {
+          "year": 2025,
+          "name": "Convolutional Neural Networks"
+        },
+        {
+          "year": 2025,
+          "name": "Sequence Models"
+        },
+        {
+          "year": 2025,
+          "name": "Structuring Machine Learning Projects"
+        },
+        {
+          "year": 2025,
+          "name": "Hyperparameter Tuning, Regularization and Optimization"
+        }
+      ]
+    },
+    {
+      "category": "Cloud Services",
+      "items": [
+        {
+          "year": 2022,
+          "name": "Microsoft Azure AZ900"
+        },
+        {
+          "year": 2025,
+          "name": "Amazon Web Services Cloud Practitioner CLF-C02"
+        }
+      ]
+    },
+    {
+      "category": "Management",
+      "items": [
+        {
+          "year": 2016,
+          "name": "Agile Certified Scrum Master"
+        },
+        {
+          "year": 2016,
+          "name": "Agile Certified Product Owner"
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "development_automation": {
+      "languages": [
+        "PowerShell",
+        "C#",
+        "Python",
+        "TSQL",
+        "Java",
+        "Swift"
+      ],
+      "ci_cd": [
+        "Azure DevOps",
+        "IBM DevOps Deploy",
+        "GitHub Actions"
+      ],
+      "infrastructure_as_code": [
+        "Terraform",
+        "ARM Templates",
+        "Bicep"
+      ],
+      "code_quality": [
+        "SonarQube",
+        "Static code analysis"
+      ],
+      "vulnerability_management": [
+        "JFrog Xray"
+      ]
+    },
+    "container_registry": [
+      "JFrog Artifactory",
+      "Prisma",
+      "Prisma Cloud",
+      "Docker",
+      "Containerd",
+      "Kubernetes"
+    ],
+    "data_analytics": [
+      "Power BI",
+      "Azure Monitor",
+      "Dynatrace",
+      "Splunk",
+      "TSQL",
+      "Data pipeline development",
+      "Metrics-driven decision making"
+    ],
+    "ai_ml": [
+      "Deep Learning & Neural Networks",
+      "Convolutional Neural Networks (CNN)",
+      "On-device Reference Augmented Generation (RAG)",
+      "Natural Language Processing (NLP)",
+      "AI Governance & Compliance Frameworks"
+    ],
+    "operating_systems": [
+      "Windows Server (NT 4.0 - 2022)",
+      "Linux (RHEL, SUSE, Debian, Ubuntu, Fedora)",
+      "UNIX (SUN Solaris, System V)",
+      "macOS (Monterey - Sequoia)"
+    ]
+  },
+  "failures": [
+    {
+      "id": "My most impactful failure",
+      "summary": "Part of my mission is to automate toil. In the pursuit of end-to-end self-service, self-documenting, and self-healing automation, I built a toolchain that made 22 friends and colleagues redundant. The company needed a quick win and laid off those team members.",
+      "lesson": "My end goal has not changed, but I learned to be more aware of the bigger picture and the long-term impact of my actions. I now fully include the people who will be affected and help them train for a transition to a new role."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Hometown High School",
+      "location": "Hometown, USA",
+      "degree": "High School Diploma",
+      "year": "1992"
+    },
+    {
+      "institution": "Random State University",
+      "location": "Collage town, USA",
+      "degree": "Bachelor of Science in Computer Science",
+      "year": "1997"
+    }
+  ],
+  "projects": [
+    {
+      "name": "TODO",
+      "description": "TODO",
+      "link": "TODO"
+    },
+    {
+      "name": "TODO",
+      "description": "TODO",
+      "link": "TODO"
+    },
+    {
+      "name": "TODO",
+      "description": "TODO",
+      "link": "TODO"
+    }
+  ],
+  "publications": [
+    {
+      "title": "TODO",
+      "publisher": "TODO",
+      "year": "TODO"
+    }
+  ],
+  "awards": [
+    {
+      "name": "TODO",
+      "year": "TODO",
+      "details": "TODO"
+    }
+  ],
+  "links": [
+    {
+      "label": "mywebsite.com",
+      "url": "https://mywebsite.com"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/john-doe/"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/john-doe"
+    },
+    {
+      "label": "TODO",
+      "url": "TODO"
+    }
+  ]
+}
