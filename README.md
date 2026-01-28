@@ -22,43 +22,13 @@ NOTE: If you want to change rate limits or update the system prompts. Those are 
 - **Ollama (local)**: Enables fast, private, and inexpensive local development with no external API dependency.
 - **OpenAI‑compatible external APIs (prod)**: Allows switching providers without rewriting the app and supports managed, scalable inference.
 
-## Local development (assumes you are running ollama, if not go to "Using an external LLM locally")
-
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-2. Create a local env file:
-   ```bash
-   cp .env.example .env.local
-   ```
-3. Update `.env.local`:
-   - `RESUME_ID=resume`
-   - `LLM_PROVIDER=ollama`
-   - `OLLAMA_BASE_URL=http://localhost:11434`
-   - `MODEL_NAME=llama3.1` (or another local model)
-4. Run the dev server:
-   ```bash
-   npm run dev
-   ```
-5. Open `http://localhost:3000`
-
-### Using an external LLM locally
-Set:
-- `LLM_PROVIDER=external`
-- `EXTERNAL_LLM_API_KEY=...` (this is the api key from the vendor of your choice.)
-- `MODEL_NAME=...` (check your case... openai model names are case sensitive. `MODEL_NAME=gpt-4.1` will work but `MODEL_NAME=GPT-4.1` will not)
-- `EXTERNAL_LLM_BASE_URL` (optional, defaults to OpenAI-compatible `EXTERNAL_LLM_BASE_URL=https://api.openai.com/v1`)
-
 ## Resume data
 Resume data lives in `data/<RESUME_ID>.json`. Each bullet includes an `id` and optional `story` field used for inline expansion. Suggested questions live in a `suggestedQuestions` array on the resume JSON. Just have a look at the resume.json example.
 
-## Using this for your own resume
-1. **Fork or clone the repo** and install dependencies:
-   ```bash
-   npm install
-   brew
-   ```
+## Local development (assumes you are running ollama, if not go to "Using an external LLM locally")
+
+1. Install dependencies:
+   Docker, ollama, nodes, uh, I think that's it.
 2. **Create your resume JSON** under `data/`:
    - Copy `data/resume.json` to `data/<your-id>.json`.
    - Update `name`, `title`, `summary`, and `contact`.
@@ -70,25 +40,44 @@ Resume data lives in `data/<RESUME_ID>.json`. Each bullet includes an `id` and o
 4. **Set your LLM provider** in `.env.local`:
    - Local: `LLM_PROVIDER=ollama` + `OLLAMA_BASE_URL`
    - External: `LLM_PROVIDER=external` + `EXTERNAL_LLM_API_KEY` + `MODEL_NAME`
-5. **Run locally**:
+5. Create a local env file:
+   ```bash
+   cp .env.example .env.local
+   ```
+6. Update `.env.local`:
+   - `RESUME_ID=resume`
+   - `LLM_PROVIDER=ollama`
+   - `OLLAMA_BASE_URL=http://localhost:11434`
+   - `MODEL_NAME=llama3.1` (or another local model)
+
+   ### or if you are using an external LLM locally
+   Set:
+   - `RESUME_ID=resume`
+   - `LLM_PROVIDER=external`
+   - `EXTERNAL_LLM_API_KEY=...` (this is the api key from the vendor of your choice.)
+   - `MODEL_NAME=...` (check your case... openai model names are case sensitive. `MODEL_NAME=gpt-4.1` will work but `MODEL_NAME=GPT-4.1` will not)
+   - `EXTERNAL_LLM_BASE_URL` (optional, defaults to OpenAI-compatible `EXTERNAL_LLM_BASE_URL=https://api.openai.com/v1`)
+
+7. Run a local dev npm server or run a container:
    ```bash
    npm run dev
    ```
-6. **Deploy** using the Azure Container Apps steps below (or your preferred host).
+   ```bash
+   docker build -t ai-resume-test:local .
+   docker run -p 3000:3000 --env-file .env.local ai-resume-test:local
+   ```
 
-## Dev build (Docker)
-```bash
-docker build -t ai-resume-query .
-docker run -p 3000:3000 --env-file .env.local ai-resume-query
-```
-Your resume chat should be running on http://localhost:3000 
+8. Open `http://localhost:3000`
+
+
+**Deploy** using the Azure Container Apps steps below (or your preferred host).
 
 ## Azure Container Apps 
 This project is designed for Azure Container Apps with ACR. The principle is the same if you want to run it in GCP or AWS.
 
-### Prereqs
+### Prerequisites 
 - Azure CLI: `az`
-- Resource group and ACR created
+- Resource group and Azure Container Registry (ACR) created in a subscription
 - Docker not required if using `az acr build`
 
 ### Build and push image
@@ -105,7 +94,7 @@ az acr build --registry <container-registry> --image ai-resume-query:latest .
 az containerapp env create \
   --name ai-resume-env \
   --resource-group <resource-group> \
-  --location eastus
+  --location <region>
 
 az containerapp create \
   --name ai-resume-query \
@@ -115,20 +104,13 @@ az containerapp create \
   --target-port 3000 \
   --ingress external \
   --registry-server <container-registry> .azurecr.io \
-  --registry-username <acr-username> \
-  --registry-password <acr-password> \
   --env-vars \
     LLM_PROVIDER=external \
     MODEL_NAME=... \
-    EXTERNAL_LLM_API_KEY=...
+    RESUME_ID=resume
 ```
 
-### Configure custom domain + HTTPS
-1. Add the Container App URL as a CNAME target in DNS.
-2. In Azure, add the custom domain to the Container App.
-3. Enable a managed certificate for HTTPS.
-
-### Optional: use secrets instead of plain env vars
+### Add your secrets for LLM API KEY
 ```bash
 az containerapp secret set \
   --name ai-resume-query \
@@ -141,6 +123,6 @@ az containerapp update \
   --set-env-vars EXTERNAL_LLM_API_KEY=secretref:llm-api-key
 ```
 
-### Ollama in production
+### NOTE: Ollama in production
 If you use Ollama in production, keep it private and only allow calls from the backend (e.g., private VNet or internal endpoint).
-But honestly, for $10 you can get enouph monthy tokens on openAI you won't need to host your own ollama container.
+But honestly, for $10 you can get enough monthly tokens on openAI you won't need to host your own ollama container and pay for GPU time.
