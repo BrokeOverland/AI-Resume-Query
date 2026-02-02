@@ -1,5 +1,5 @@
 # AI Resume Query
-Welcome to the AI Resume Query project. This project is based on a substack project from Nate B Jones and a conversation with Emma Dennis. Nate's project used loveable and I just couldn't bring myself to spend more money on yet another "vibe code it with AI" serivce, and I alreay pay for cursor. So what is this? This project is a combination of Artificial Intelegence and Meat Sack Intelegence working in partnership to bring you a full-stack containerized Next.js app that answers natural-language questions about a resume and job history. Responses are grounded in structured resume data with optional bullet-story context. 
+Welcome to the AI Resume Query project. This project is based on a substack project from Nate B Jones and a conversation with Emma Dennis. Nate's project used loveable and I just couldn't bring myself to spend more money on yet another "vibe code it with AI" serivce, and I already pay for cursor. So what is this? This project is a combination of Artificial Intelegence and Meat Sack Intelegence working in partnership to bring you a full-stack containerized Next.js app that answers natural-language questions about a resume and job history. Responses are grounded in structured resume data with optional bullet-story context. 
 
 ## Features
 - Chat UI with message history, typing indicator, and suggested questions
@@ -34,17 +34,15 @@ Resume data lives in `data/<RESUME_ID>.json`. Each bullet includes an `id` and o
    - Add your experience entries with `company`, `role`, `start`, `end`, and `bullets`.
    - Give each bullet a stable `id` and add a `story` if you want inline expansion.
    - Update `suggestedQuestions` to match your experience.
-3. **Set your resume selection** in `.env.local`:
-   - `RESUME_ID=<your-id>` (matches the JSON filename without `.json`)
-4. **Set your LLM provider** in `.env.local`:
+3. **Set your LLM provider** in `.env.local`:
    - Local: `LLM_PROVIDER=ollama` + `OLLAMA_BASE_URL`
    - External: `LLM_PROVIDER=external` + `EXTERNAL_LLM_API_KEY` + `MODEL_NAME`
-5. Create a local env file:
+4. Create a local env file:
    ```bash
    cp .env.example .env.local
    ```
-6. Update `.env.local`:
-   - `RESUME_ID=resume`
+5. Update `.env.local`:
+   - `RESUME_ID=<your-id>` (matches the JSON filename without `.json`)
    - `LLM_PROVIDER=ollama`
    - `OLLAMA_BASE_URL=http://localhost:11434`
    - `MODEL_NAME=llama3.1` (or another local model)
@@ -57,7 +55,7 @@ Resume data lives in `data/<RESUME_ID>.json`. Each bullet includes an `id` and o
    - `MODEL_NAME=...` (check your case... openai model names are case sensitive. `MODEL_NAME=gpt-4.1` will work but `MODEL_NAME=GPT-4.1` will not)
    - `EXTERNAL_LLM_BASE_URL` (optional, defaults to OpenAI-compatible `EXTERNAL_LLM_BASE_URL=https://api.openai.com/v1`)
 
-7. Run a local dev npm server or run a container:
+6. Run a local dev npm server or run a container:
    ```bash
    npm run dev
    ```
@@ -66,7 +64,7 @@ Resume data lives in `data/<RESUME_ID>.json`. Each bullet includes an `id` and o
    docker run -p 3000:3000 --env-file .env.local ai-resume-test:local
    ```
 
-8. Open `http://localhost:3000`
+7. Open `http://localhost:3000`
 
 
 **Deploy** using the Azure Container Apps steps below (or your preferred host).
